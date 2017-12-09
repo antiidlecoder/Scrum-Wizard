@@ -20,11 +20,11 @@ import javafx.stage.Stage;
 /**
  * 
  * @author Joel
- * @author Joël
+ * @author Joï¿½l
  *
  */
 public class Main extends Application {
-	// salami
+	// salami + 2
     private Stage primaryStage;
     private BorderPane rootLayout;
     
