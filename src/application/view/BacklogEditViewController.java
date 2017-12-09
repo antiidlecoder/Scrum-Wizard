@@ -103,10 +103,10 @@ public class BacklogEditViewController {
      * 
      * @return true if the input is valid
      */
-    /*
+    
     private boolean isInputValid() {
         String errorMessage = "";
-
+/*
         if (firstNameField.getText() == null || firstNameField.getText().length() == 0) {
             errorMessage += "No valid first name!\n"; 
         }
@@ -139,7 +139,7 @@ public class BacklogEditViewController {
                 errorMessage += "No valid birthday. Use the format dd.mm.yyyy!\n";
             }
         }
-
+*/
         if (errorMessage.length() == 0) {
             return true;
         } else {
@@ -155,6 +155,6 @@ public class BacklogEditViewController {
             return false;
         }
     }
-    */
+    
     
 }
