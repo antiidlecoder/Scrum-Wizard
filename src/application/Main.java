@@ -17,9 +17,13 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+/**
+ * 
+ * @author Joel
+ *
+ */
 public class Main extends Application {
 
-	/* SOME COMMENT */
     private Stage primaryStage;
     private BorderPane rootLayout;
     
