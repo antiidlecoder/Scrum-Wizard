@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ButtonBar layoutX="284.0" layoutY="346.0" prefHeight="40.0" prefWidth="229.0" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0">
@@ -16,10 +15,10 @@
             <Button minWidth="66.0" mnemonicParsing="false" prefHeight="31.0" text="Login" />
         </buttons>
       </ButtonBar>
-      <TextField layoutX="191.0" layoutY="227.0" AnchorPane.leftAnchor="191.0" AnchorPane.topAnchor="227.0" />
-      <TextField layoutX="191.0" layoutY="185.0" AnchorPane.leftAnchor="191.0" AnchorPane.topAnchor="185.0" />
-      <Label layoutX="87.0" layoutY="190.0" text="Benutzername:" AnchorPane.leftAnchor="87.0" AnchorPane.topAnchor="190.0" />
-      <Label layoutX="124.0" layoutY="232.0" text="Passwort:" AnchorPane.leftAnchor="124.0" AnchorPane.topAnchor="232.0" />
+      <TextField layoutX="170.0" layoutY="227.0" AnchorPane.leftAnchor="170.0" AnchorPane.topAnchor="227.0" />
+      <TextField layoutX="171.0" layoutY="185.0" AnchorPane.leftAnchor="171.0" AnchorPane.topAnchor="185.0" />
+      <Label layoutX="56.0" layoutY="190.0" prefHeight="12.0" prefWidth="99.0" text="Benutzername:" AnchorPane.leftAnchor="56.0" AnchorPane.topAnchor="190.0" />
+      <Label layoutX="93.0" layoutY="232.0" text="Passwort:" AnchorPane.leftAnchor="93.0" AnchorPane.topAnchor="232.0" />
       <Label layoutX="181.0" layoutY="123.0" prefHeight="48.0" prefWidth="166.0" text="Bitte Loggen sie sich ein" AnchorPane.leftAnchor="181.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="123.0" />
       <Label layoutX="91.0" layoutY="46.0" prefHeight="48.0" prefWidth="346.0" text="Willkommen bei SCRUM-Wizard" AnchorPane.leftAnchor="91.0" AnchorPane.rightAnchor="90.0" AnchorPane.topAnchor="46.0">
          <font>
