@@ -78,12 +78,12 @@ public class BacklogEditViewController {
      */
     @FXML
     private void handleOk() {
-    	int i = 1;
-        if (i == 1) {
-        	theme.setText(backlog.getTheme());
-            sprint.setText(backlog.getSprint());
-            userStory.setText(backlog.getUserStory());
-            status.setValue(backlog.getStatus());
+    
+        if (isInputValid()) {
+        	backlog.setTheme(theme.getText());
+        	backlog.setSprint(sprint.getText());
+        	backlog.setUserStory(userStory.getText());
+            //backlog.setStatus(status.getSelectionModel());
 
             okClicked = true;
             dialogStage.close();
@@ -103,10 +103,10 @@ public class BacklogEditViewController {
      * 
      * @return true if the input is valid
      */
-    /*
+    
     private boolean isInputValid() {
         String errorMessage = "";
-
+/*
         if (firstNameField.getText() == null || firstNameField.getText().length() == 0) {
             errorMessage += "No valid first name!\n"; 
         }
@@ -139,7 +139,7 @@ public class BacklogEditViewController {
                 errorMessage += "No valid birthday. Use the format dd.mm.yyyy!\n";
             }
         }
-
+*/
         if (errorMessage.length() == 0) {
             return true;
         } else {
@@ -155,6 +155,6 @@ public class BacklogEditViewController {
             return false;
         }
     }
-    */
+    
     
 }
