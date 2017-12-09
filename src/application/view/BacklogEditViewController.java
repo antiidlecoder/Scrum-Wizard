@@ -78,12 +78,12 @@ public class BacklogEditViewController {
      */
     @FXML
     private void handleOk() {
-    	int i = 1;
-        if (i == 1) {
-        	theme.setText(backlog.getTheme());
-            sprint.setText(backlog.getSprint());
-            userStory.setText(backlog.getUserStory());
-            status.setValue(backlog.getStatus());
+    
+        if (isInputValid()) {
+        	backlog.setTheme(theme.getText());
+        	backlog.setSprint(sprint.getText());
+        	backlog.setUserStory(userStory.getText());
+            //backlog.setStatus(status.getSelectionModel());
 
             okClicked = true;
             dialogStage.close();
