@@ -20,7 +20,7 @@ import javafx.stage.Stage;
 /**
  * 
  * @author Joel
- * @author Joël
+ * @author JoÃ«l
  * @author Benni
  *
  */
