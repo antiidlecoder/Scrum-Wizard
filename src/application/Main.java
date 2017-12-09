@@ -22,7 +22,7 @@ import javafx.stage.Stage;
  * @author Joel
  * @author Joël
  * @author Benni
- *
+ * @author Lukas
  */
 public class Main extends Application {
 	// salami + 2
