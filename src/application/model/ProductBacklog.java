@@ -7,20 +7,18 @@ import javafx.beans.property.StringProperty;
 
 public class ProductBacklog {
 	
-	private StringProperty themeId;
-	private StringProperty theme;
-	private StringProperty sprint;
-	private StringProperty userStory;
-	private StringProperty status;
+	private StringProperty themeId = new SimpleStringProperty();
+	private StringProperty theme = new SimpleStringProperty();
+	private StringProperty sprint = new SimpleStringProperty();
+	private StringProperty userStory = new SimpleStringProperty();
+	private StringProperty status = new SimpleStringProperty();
 
 	
 	
+
 	public ProductBacklog() {
-		this.themeId = new SimpleStringProperty("1");
-		this.theme = new SimpleStringProperty("Front-End");
-		this.sprint = new SimpleStringProperty("1");
-		this.userStory = new SimpleStringProperty("As .. I want to.. So that a friend can see it.");
-		this.status = new SimpleStringProperty("In progress");
+		
+		
 	}
 	
 	
