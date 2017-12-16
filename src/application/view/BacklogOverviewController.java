@@ -9,6 +9,9 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.SingleSelectionModel;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
@@ -63,7 +66,8 @@ public class BacklogOverviewController {
 	private Button deleteButton;
 	
 	
-	
+	@FXML
+	private TabPane tabPane;
 
 	// Reference to the main application.
 	private Main mainApp;
@@ -202,11 +206,26 @@ public class BacklogOverviewController {
 	     */
 	    @FXML
 	    private void handleNewProductBlEntry() {
-	        ProductBacklog tempBl = new ProductBacklog();
-	        boolean okClicked = mainApp.showProductBacklogEditView(tempBl);
-	        if (okClicked) {
-	            mainApp.getProductBacklogData().add(tempBl);
-	        }
+	    	
+	    	//SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
+	    	int selection = tabPane.getSelectionModel().getSelectedIndex();
+	    	
+	    	if (selection == 0) {
+		        ProductBacklog tempBl = new ProductBacklog();
+		        boolean okClicked = mainApp.showProductBacklogEditView(tempBl);
+		        if (okClicked) {
+		            mainApp.getProductBacklogData().add(tempBl);
+		        }
+	    	} 
+	    	/*
+	    	else {
+	    		SprintBacklog tempSl = new SprintBacklog();
+	    		boolean okClick = mainApp.showSprintBacklogEditView(tempSl);
+	    		if (okClicked) {
+	    			mainApp.getSprintBacklogData().add(tempSl);
+	    		}
+	    	} */
+	    	
 	    }
 
 	    /**
