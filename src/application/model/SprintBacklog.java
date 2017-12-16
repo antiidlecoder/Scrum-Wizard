@@ -6,21 +6,20 @@ import javafx.beans.property.StringProperty;
 
 public class SprintBacklog {
 	
-	private StringProperty taskId;
-	private StringProperty task;
-	private StringProperty priority;
-	private StringProperty timeS;
-	private StringProperty timeI;
-	private StringProperty status;
+	private StringProperty taskId = new SimpleStringProperty();
+	private StringProperty task  = new SimpleStringProperty();
+	private StringProperty priority  = new SimpleStringProperty();
+	private StringProperty timeS  = new SimpleStringProperty();
+	private StringProperty timeI  = new SimpleStringProperty();
+	private StringProperty status  = new SimpleStringProperty();
+
+	
 	
 	public SprintBacklog() {
-		this.taskId = new SimpleStringProperty("1");
-		this.task = new SimpleStringProperty("Submit button stylen");
-		this.priority = new SimpleStringProperty("1");
-		this.timeS = new SimpleStringProperty("60");
-		this.timeI = new SimpleStringProperty("90");
-		this.status = new SimpleStringProperty("In progress");
+		
+		
 	}
+	
 	
 	
 	public StringProperty TaskId() {

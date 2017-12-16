@@ -53,8 +53,12 @@ public class Main extends Application {
     
     public Main() {
         // Add some sample data
-        productBacklogData.add(new ProductBacklog());
+     /*   productBacklogData.add(new ProductBacklog());
         sprintBacklogData.add(new SprintBacklog());
+        
+        If this is uncommented, then it adds an additional empty line and looks ugly
+        
+        */
         /*
         backlogData.add(new Backlog(2, "Mueller"));
         backlogData.add(new Backlog(3, "Kurz"));
