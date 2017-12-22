@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -41,10 +40,10 @@
             <Label text="User Story" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Sprint" GridPane.columnIndex="1" GridPane.rowIndex="2" />
             <Label text="Status" GridPane.columnIndex="4" />
-            <TextArea fx:id="userStory" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField fx:id="theme" GridPane.columnIndex="2" />
-            <TextField fx:id="sprint" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <ChoiceBox fx:id="status" prefWidth="150.0" GridPane.columnIndex="5" />
+            <TextArea fx:id="taUserStory" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="txtTheme" GridPane.columnIndex="2" />
+            <TextField fx:id="txtSprint" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="txtPbStatus" GridPane.columnIndex="5" />
          </children>
       </GridPane>
    </center>

@@ -35,7 +35,8 @@ public class RootLayoutController {
     @FXML
     private void handleNew() {
         mainApp.getProductBacklogData().clear();
-        mainApp.setProductBacklogFilePath(null);
+        mainApp.getSprintBacklogData().clear();
+        mainApp.setBacklogFilePath(null);
     }
 
     /**
@@ -54,7 +55,7 @@ public class RootLayoutController {
         File file = fileChooser.showOpenDialog(mainApp.getPrimaryStage());
 
         if (file != null) {
-            mainApp.loadProductBacklogDataFromFile(file);
+            mainApp.loadBacklogDataFromFile(file);
         }
     }
 
@@ -64,9 +65,9 @@ public class RootLayoutController {
      */
     @FXML
     private void handleSave() {
-        File personFile = mainApp.getProductBacklogFilePath();
+        File personFile = mainApp.getBacklogFilePath();
         if (personFile != null) {
-            mainApp.saveProductBacklogDataToFile(personFile);
+            mainApp.saveBacklogDataToFile(personFile);
         } else {
             handleSaveAs();
         }
@@ -92,7 +93,7 @@ public class RootLayoutController {
             if (!file.getPath().endsWith(".xml")) {
                 file = new File(file.getPath() + ".xml");
             }
-            mainApp.saveProductBacklogDataToFile(file);
+            mainApp.saveBacklogDataToFile(file);
         }
     }
 

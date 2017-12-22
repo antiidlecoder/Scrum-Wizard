@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.view.BacklogEditViewController">
+   <bottom>
+      <ButtonBar prefHeight="40.0" prefWidth="569.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button fx:id="save" mnemonicParsing="false" onAction="#handleSprintOk" text="Speichern" />
+            <Button fx:id="cancel" mnemonicParsing="false" onAction="#handleSprintCancel" text="Abbrechen" />
+        </buttons>
+      </ButtonBar>
+   </bottom>
+   <left>
+      <GridPane BorderPane.alignment="CENTER">
+        <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="23.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="140.0" minWidth="10.0" prefWidth="97.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="215.0" minWidth="10.0" prefWidth="177.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="0.0" prefWidth="12.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="140.0" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Task" GridPane.columnIndex="1" />
+            <Label text="Beschrieb" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Zeit soll" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Status" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <TextArea fx:id="taDescription" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="txtTask" GridPane.columnIndex="2" />
+            <TextField fx:id="txtPriority" prefHeight="27.0" prefWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="txtSbStatus" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <TextField fx:id="txtTimeS" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label text="Priorität" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtTimeI" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="Zeit ist" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="txtResp" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label text="Verantwortlich" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+   </left>
+</BorderPane>

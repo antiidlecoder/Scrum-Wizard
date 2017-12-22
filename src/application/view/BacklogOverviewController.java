@@ -1,23 +1,20 @@
 package application.view;
 
+
+
 import application.Main;
-import application.model.Backlog;
 import application.model.ProductBacklog;
 import application.model.SprintBacklog;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.SingleSelectionModel;
-import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 public class BacklogOverviewController {
 	@FXML
-	private TableView<Backlog> projectBacklogTable;
+	private TableView<ProductBacklog> projectBacklogTable;
 	@FXML
 	private TableView<SprintBacklog> sprintBacklogTable;
 	@FXML
@@ -33,9 +30,9 @@ public class BacklogOverviewController {
 	@FXML
 	private TableColumn<ProductBacklog, String> pbStatus;
 	@FXML
-	private TableColumn<SprintBacklog, String> sbId;
-	@FXML
 	private TableColumn<SprintBacklog, String> sbTask;
+	@FXML
+	private TableColumn<SprintBacklog, String> sbDescription;
 	@FXML
 	private TableColumn<SprintBacklog, String> sbPriority;
 	@FXML
@@ -43,34 +40,16 @@ public class BacklogOverviewController {
 	@FXML
 	private TableColumn<SprintBacklog, String> sbTimeI;
 	@FXML
+	private TableColumn<SprintBacklog, String> sbResponsible;
+	@FXML
 	private TableColumn<SprintBacklog, String> sbStatus;
 
-	@FXML
-	private Label backlogIdLabel;
-	@FXML
-	private Label backlogThemeLabel;
-	@FXML
-	private Label backlogSprintLabel;
-	@FXML
-	private Label backlogUserStoryLabel;
-	@FXML
-	private Label backlogTasksLabel;
-	@FXML
-	private Label backlogNotesLabel;
-	@FXML
-	private Label backlogPriorityLabel;
-	@FXML
-	private Label backlogStatusLabel;
-	
-	@FXML
-	private Button deleteButton;
-	
-	
 	@FXML
 	private TabPane tabPane;
 
 	// Reference to the main application.
 	private Main mainApp;
+
 
 	/**
 	 * The constructor.
@@ -95,31 +74,32 @@ public class BacklogOverviewController {
 		pbSprint.setCellValueFactory(
 				cellData -> cellData.getValue().Sprint());
 		pbStatus.setCellValueFactory(
-				cellData -> cellData.getValue().Status());
+				cellData -> cellData.getValue().PBStatus());
 
-		
-		sbId.setCellValueFactory(
-				cellData -> cellData.getValue().TaskId());
+
 		sbTask.setCellValueFactory(
 				cellData -> cellData.getValue().Task());
+		sbDescription.setCellValueFactory(
+				cellData -> cellData.getValue().Description());
 		sbPriority.setCellValueFactory(
 				cellData -> cellData.getValue().Priority());
 		sbTimeS.setCellValueFactory(
 				cellData -> cellData.getValue().TimeS());
 		sbTimeI.setCellValueFactory(
 				cellData -> cellData.getValue().TimeI());
+		sbResponsible.setCellValueFactory(
+				cellData -> cellData.getValue().Responsible());
 		sbStatus.setCellValueFactory(
-				cellData -> cellData.getValue().Status());
-		
-		
-		
-		
+				cellData -> cellData.getValue().SBStatus());
+
+
 		// Clear Backlog details.
-		showBacklogDetails(null);
+		showProductBacklogDetails(null);
+		showSprintBacklogDetails(null);
 
 		// Listen for selection changes and show the Backlog details when changed.
 		productBacklogTable.getSelectionModel().selectedItemProperty().addListener(
-				(observable, oldValue, newValue) -> showBacklogDetails(newValue));
+				(observable, oldValue, newValue) -> showProductBacklogDetails(newValue));
 		sprintBacklogTable.getSelectionModel().selectedItemProperty().addListener(
 				(observable, oldValue, newValue) -> showSprintBacklogDetails(newValue));
 	}
@@ -141,41 +121,34 @@ public class BacklogOverviewController {
 	 * Fills all text fields to show details about the Backlog.
 	 * If the specified Backlog is null, all text fields are cleared.
 	 * 
-	 * @param Backlog the Backlog or null
+	 * @param ProductBacklog the Backlog or null
+	 * 
+	 * for upcoming detail-view
 	 */
-	private void showBacklogDetails(ProductBacklog Backlog) {
-		if (Backlog != null) {
-			// Fill the labels with info from the Backlog object
-			//sprintColumn.setCellValueFactory(
-			//		cellData -> cellData.getValue().BacklogSprintProperty());
-/*
-			backlogIdLabel.setText(Integer.toString(Backlog.getBacklogId()));
-			backlogThemeLabel.setText(Backlog.getBacklogTheme());
-			backlogSprintLabel.setText(Backlog.getBacklogSprint());
-			backlogUserStoryLabel.setText(Backlog.getBacklogUserStory());
-			//backlogTasksLabel.setText(Backlog.getBacklogTask());
-			backlogNotesLabel.setText(Backlog.getBacklogNotes());
-			backlogPriorityLabel.setText(Integer.toString(Backlog.getBacklogPriority()));
-			backlogStatusLabel.setText(Backlog.getBacklogStatus());
-			*/
+	private void showProductBacklogDetails(ProductBacklog ProductBacklog) {
+		if (ProductBacklog != null) {
+
 		} else {
-			/*
-			// Backlog is null, remove all the text.
-			backlogIdLabel.setText("");
-			backlogThemeLabel.setText("");
-			backlogSprintLabel.setText("");
-			backlogUserStoryLabel.setText("");
-			//backlogTasksLabel.setText("");
-			backlogNotesLabel.setText("");
-			backlogPriorityLabel.setText("");
-			backlogStatusLabel.setText("");
-			*/
+
 		}
 	}
-	private void showSprintBacklogDetails(SprintBacklog sprintBacklog) {
-		
+
+	/**
+	 * Fills all text fields to show details about the Backlog.
+	 * If the specified Backlog is null, all text fields are cleared.
+	 * 
+	 * @param Backlog the Backlog or null
+	 * 
+	 * for upcoming detail-view
+	 */
+	private void showSprintBacklogDetails(SprintBacklog Backlog) {
+		if (Backlog != null) {
+
+		} else {
+
+		}
 	}
-	
+
 	/**
 	 * Called when the user clicks on the delete button.
 	 */
@@ -183,75 +156,90 @@ public class BacklogOverviewController {
 	private void deleteBacklogEntry() {
 		int selectedIndex = productBacklogTable.getSelectionModel().getSelectedIndex();
 		int sprintIndex = sprintBacklogTable.getSelectionModel().getSelectedIndex();
-	    if (selectedIndex >= 0) {
-	    	productBacklogTable.getItems().remove(selectedIndex);
-	    } else if (sprintIndex >= 0) {
-	    	sprintBacklogTable.getItems().remove(sprintIndex);
-	    } else {
-	        // Nothing selected.
-	        Alert alert = new Alert(AlertType.WARNING);
-	        alert.initOwner(mainApp.getPrimaryStage());
-	        alert.setTitle("No Selection");
-	        alert.setHeaderText("No Person Selected");
-	        alert.setContentText("Please select a person in the table.");
+		if (selectedIndex >= 0) {
+			productBacklogTable.getItems().remove(selectedIndex);
+		} else if (sprintIndex >= 0) {
+			sprintBacklogTable.getItems().remove(sprintIndex);
+		} else {
+			// Nothing selected.
+			Alert alert = new Alert(AlertType.WARNING);
+			alert.initOwner(mainApp.getPrimaryStage());
+			alert.setTitle("No Selection");
+			alert.setHeaderText("No Backlog Selected");
+			alert.setContentText("Please select a backlog in the table.");
 
-	        alert.showAndWait();
-	    }
+			alert.showAndWait();
+		}
 	}
-		
-	    
-	    /**
-	     * Called when the user clicks the new button. Opens a dialog to edit
-	     * details for a new person.
-	     */
-	    @FXML
-	    private void handleNewProductBlEntry() {
-	    	
-	    	//SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
-	    	int selection = tabPane.getSelectionModel().getSelectedIndex();
-	    	
-	    	if (selection == 0) {
-		        ProductBacklog tempBl = new ProductBacklog();
-		        boolean okClicked = mainApp.showProductBacklogEditView(tempBl);
-		        if (okClicked) {
-		            mainApp.getProductBacklogData().add(tempBl);
-		        }
-	    	} 
-	    	/*
-	    	else {
-	    		SprintBacklog tempSl = new SprintBacklog();
-	    		boolean okClick = mainApp.showSprintBacklogEditView(tempSl);
-	    		if (okClicked) {
-	    			mainApp.getSprintBacklogData().add(tempSl);
-	    		}
-	    	} */
-	    	
-	    }
 
-	    /**
-	     * Called when the user clicks the edit button. Opens a dialog to edit
-	     * details for the selected person.
-	     */
-	    @FXML
-	    private void handleEditProductBl() {
-	        ProductBacklog selectedBacklog = productBacklogTable.getSelectionModel().getSelectedItem();
-	        if (selectedBacklog != null) {
-	            boolean okClicked = mainApp.showProductBacklogEditView(selectedBacklog);
-	            if (okClicked) {
-	                showBacklogDetails(selectedBacklog);
-	            }
+	/**
+	 * Called when the user clicks the new button. Opens a dialog to edit
+	 * details for a new backlog.
+	 */
+	@FXML
+	private void handleNewBacklogEntry() {
 
-	        } else {
-	            // Nothing selected.
-	            Alert alert = new Alert(AlertType.WARNING);
-	            alert.initOwner(mainApp.getPrimaryStage());
-	            alert.setTitle("No Selection");
-	            alert.setHeaderText("No Backlog Selected");
-	            alert.setContentText("Please select a backlog in the table.");
+		//SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
+		int tab = tabPane.getSelectionModel().getSelectedIndex();
+		if (tab == 1) {
+			SprintBacklog tempSl = new SprintBacklog();
+			boolean sprintOk = mainApp.showSprintBacklogEditView(tempSl);
+			if (sprintOk) {
+				mainApp.getSprintBacklogData().add(tempSl);
+			}
+		} else if (tab == 0) {
+			ProductBacklog tempBl = new ProductBacklog();
+			boolean okClicked = mainApp.showProductBacklogEditView(tempBl);
+			if (okClicked) {
+				mainApp.getProductBacklogData().add(tempBl);
+			}
+		} 
 
-	            alert.showAndWait();
-	        }
-	    }
-		
-	   
+	}
+
+	/**
+	 * Called when the user clicks the edit button. Opens a dialog to edit
+	 * details for the selected backlog.
+	 */
+	@FXML
+	private void handleEditBacklog() {
+		ProductBacklog selectedProductBacklog = productBacklogTable.getSelectionModel().getSelectedItem();
+		SprintBacklog selectedSprintBacklog = sprintBacklogTable.getSelectionModel().getSelectedItem();
+
+		int tab = tabPane.getSelectionModel().getSelectedIndex();
+		if (tab == 1) {
+			if (selectedSprintBacklog != null) {
+				boolean sprintOk = mainApp.showSprintBacklogEditView(selectedSprintBacklog);
+				if (sprintOk) {
+					showSprintBacklogDetails(selectedSprintBacklog);
+				}
+			} else {
+				// Nothing selected.
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.initOwner(mainApp.getPrimaryStage());
+				alert.setTitle("No Selection");
+				alert.setHeaderText("No Backlog Selected");
+				alert.setContentText("Please select a task in the table.");
+
+				alert.showAndWait();
+			}
+		} else if (tab == 0) {
+			if (selectedProductBacklog != null) {
+				boolean okClicked = mainApp.showProductBacklogEditView(selectedProductBacklog);
+				if (okClicked) {
+					showProductBacklogDetails(selectedProductBacklog);
+				}
+
+			} else {
+				// Nothing selected.
+				Alert alert = new Alert(AlertType.WARNING);
+				alert.initOwner(mainApp.getPrimaryStage());
+				alert.setTitle("No Selection");
+				alert.setHeaderText("No Backlog Selected");
+				alert.setContentText("Please select a backlog in the table.");
+
+				alert.showAndWait();
+			}
+		}
+	}
 }

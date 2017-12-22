@@ -1,28 +1,35 @@
 package application.model;
 
-import javafx.beans.property.StringProperty;
-import javafx.beans.property.SimpleStringProperty;
+
+
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
 
+
+
 public class ProductBacklog {
 	
+	//Product backlog entities
 	private StringProperty themeId = new SimpleStringProperty();
 	private StringProperty theme = new SimpleStringProperty();
 	private StringProperty sprint = new SimpleStringProperty();
 	private StringProperty userStory = new SimpleStringProperty();
-	private StringProperty status = new SimpleStringProperty();
-
+	private StringProperty pbStatus = new SimpleStringProperty();
 	
-	
-
-	public ProductBacklog() {
-		
-		
-	}
-	
-	
-	public void setThemeId(StringProperty themeId) {
+ 
+	//Constructor
+    public ProductBacklog() {
+        
+    }
+    
+    
+    /**
+     * 
+     * GETTERS AND SETTERS
+     *
+     */
+    
+    public void setThemeId(StringProperty themeId) {
 		this.themeId = themeId;
 	}
 	public String getThemeId() {
@@ -42,6 +49,7 @@ public class ProductBacklog {
 	public StringProperty Theme() {
 		return theme;
 	}
+	
 	
 	public void setSprint(String sprint) {
 		this.sprint.set(sprint);
@@ -65,15 +73,14 @@ public class ProductBacklog {
 	}
 	
 	
-	public void setStatus(String status) {
-		this.status.set(status);
+	public void setPBStatus(String status) {
+		this.pbStatus.set(status);
 	}
-	public String getStatus() {
-		return status.get();
+	public String getPBStatus() {
+		return pbStatus.get();
 	}
-	public StringProperty Status() {
-		return status;
+	public StringProperty PBStatus() {
+		return pbStatus;
 	}
-
-
+     
 }

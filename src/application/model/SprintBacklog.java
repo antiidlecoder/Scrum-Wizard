@@ -2,86 +2,111 @@ package application.model;
 
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
-import javafx.beans.property.StringProperty;
 
 public class SprintBacklog {
 	
 	private StringProperty taskId = new SimpleStringProperty();
 	private StringProperty task  = new SimpleStringProperty();
+	private StringProperty description  = new SimpleStringProperty();	
 	private StringProperty priority  = new SimpleStringProperty();
 	private StringProperty timeS  = new SimpleStringProperty();
 	private StringProperty timeI  = new SimpleStringProperty();
-	private StringProperty status  = new SimpleStringProperty();
+	private StringProperty responsible  = new SimpleStringProperty();
+	private StringProperty sbStatus  = new SimpleStringProperty();
 
 	
 	
 	public SprintBacklog() {
-		
-		
+			
 	}
 	
 	
-	
-	public StringProperty TaskId() {
-		return taskId;
-	}
-	public void setTaskId(StringProperty taskId) {
-		this.taskId = taskId;
+	public void setTaskId(String taskId) {
+		this.taskId.set(taskId);
 	}
 	public String getTaskId() {
 		return taskId.get();
 	}
-	
-	public StringProperty Task() {
-		return task;
+	public StringProperty TaskId() {
+		return taskId;
 	}
-	public void setTask(StringProperty task) {
-		this.task = task;
+	
+	
+	public void setTask(String task) {
+		this.task.set(task);
 	}
 	public String getTask() {
 		return task.get();
 	}
-	
-	public StringProperty Priority() {
-		return priority;
+	public StringProperty Task() {
+		return task;
 	}
-	public void setPriority(StringProperty priority) {
-		this.priority = priority;
+	
+	
+	public void setDescription(String description) {
+		this.description.set(description);;
+	}
+	public String getDescription() {
+		return description.get();
+	}
+	public StringProperty Description() {
+		return description;
+	}
+	
+	
+	public void setPriority(String priority) {
+		this.priority.set(priority);
 	}
 	public String getPriority() {
 		return priority.get();
 	}
-	
-	public StringProperty TimeS() {
-		return timeS;
+	public StringProperty Priority() {
+		return priority;
 	}
-	public void setTimeS(StringProperty timeS) {
-		this.timeS = timeS;
+	
+	
+	public void setTimeS(String timeS) {
+		this.timeS.set(timeS);;
 	}
 	public String getTimeS() {
 		return timeS.get();
 	}
-	
-	public StringProperty TimeI() {
-		return timeI;
+	public StringProperty TimeS() {
+		return timeS;
 	}
-	public void setTimeI(StringProperty timeI) {
-		this.timeI = timeI;
+	
+	
+	public void setTimeI(String timeI) {
+		this.timeI.set(timeI);
 	}
 	public String getTimeI() {
 		return timeI.get();
 	}
+	public StringProperty TimeI() {
+		return timeI;
+	}
 	
-	public StringProperty Status() {
-		return status;
+	
+	public void setResponsible(String responsible) {
+		this.responsible.set(responsible);;
 	}
-	public void setStatus(StringProperty status) {
-		this.status = status;
+	public String getResponsible() {
+		return responsible.get();
 	}
-	public String getStatus() {
-		return status.get();
+	public StringProperty Responsible() {
+		return responsible;
 	}
-
+	
+	
+	public void setSBStatus(String status) {
+		this.sbStatus.set(status);
+	}
+	public String getSBStatus() {
+		return sbStatus.get();
+	}
+	public StringProperty SBStatus() {
+		return sbStatus;
+	}
 
 	
 }
