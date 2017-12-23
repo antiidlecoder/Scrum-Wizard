@@ -13,6 +13,8 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 
 public class BacklogOverviewController {
+	
+	//Product backlog
 	@FXML
 	private TableView<ProductBacklog> projectBacklogTable;
 	@FXML
@@ -29,6 +31,10 @@ public class BacklogOverviewController {
 	private TableColumn<ProductBacklog, String> pbSprint;
 	@FXML
 	private TableColumn<ProductBacklog, String> pbStatus;
+	
+	//Sprint backlog
+	@FXML
+	private TableColumn<SprintBacklog, String> sbSprint;
 	@FXML
 	private TableColumn<SprintBacklog, String> sbTask;
 	@FXML
@@ -65,8 +71,6 @@ public class BacklogOverviewController {
 	@FXML
 	private void initialize() {
 		// Initialize the Backlog table with the two columns.
-		pbId.setCellValueFactory(
-				cellData -> cellData.getValue().ThemeId());
 		pbUserStory.setCellValueFactory(
 				cellData -> cellData.getValue().UserStory());
 		pbTheme.setCellValueFactory(
@@ -77,6 +81,8 @@ public class BacklogOverviewController {
 				cellData -> cellData.getValue().PBStatus());
 
 
+		sbSprint.setCellValueFactory(
+				cellData -> cellData.getValue().SBSprint());
 		sbTask.setCellValueFactory(
 				cellData -> cellData.getValue().Task());
 		sbDescription.setCellValueFactory(

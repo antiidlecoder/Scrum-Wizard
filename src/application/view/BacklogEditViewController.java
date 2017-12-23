@@ -26,6 +26,8 @@ public class BacklogEditViewController {
     
     //Sprint backlog
     @FXML
+    private TextField txtSBSprint;
+    @FXML
     private TextField txtTask;
     @FXML
     private TextField txtPriority;
@@ -69,7 +71,7 @@ public class BacklogEditViewController {
      * 
      * @param productBacklog
      */
-    public void setBacklog(ProductBacklog productBacklog) {
+    public void setProductBacklog(ProductBacklog productBacklog) {
         this.productBacklog = productBacklog;
 
         txtTheme.setText(productBacklog.getTheme());
@@ -86,6 +88,7 @@ public class BacklogEditViewController {
     public void setSprintBacklog(SprintBacklog tempSl) {
         this.sprintBacklog = tempSl;
     	
+        txtSBSprint.setText(tempSl.getSBSprint());
     	txtTask.setText(tempSl.getTask());
     	taDescription.setText(tempSl.getDescription());
     	txtPriority.setText(tempSl.getPriority());
@@ -129,6 +132,7 @@ public class BacklogEditViewController {
     @FXML
     private void handleSprintOk() {
     	if (isInputValid()) {
+    		sprintBacklog.setSBSprint(txtSBSprint.getText());
         	sprintBacklog.setTask(txtTask.getText());
             sprintBacklog.setDescription(taDescription.getText());
             sprintBacklog.setPriority(txtPriority.getText());

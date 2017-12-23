@@ -5,7 +5,7 @@ import javafx.beans.property.StringProperty;
 
 public class SprintBacklog {
 	
-	private StringProperty taskId = new SimpleStringProperty();
+	private StringProperty sprint = new SimpleStringProperty();
 	private StringProperty task  = new SimpleStringProperty();
 	private StringProperty description  = new SimpleStringProperty();	
 	private StringProperty priority  = new SimpleStringProperty();
@@ -21,14 +21,14 @@ public class SprintBacklog {
 	}
 	
 	
-	public void setTaskId(String taskId) {
-		this.taskId.set(taskId);
+	public void setSBSprint(String sprint) {
+		this.sprint.set(sprint);
 	}
-	public String getTaskId() {
-		return taskId.get();
+	public String getSBSprint() {
+		return sprint.get();
 	}
-	public StringProperty TaskId() {
-		return taskId;
+	public StringProperty SBSprint() {
+		return sprint;
 	}
 	
 	

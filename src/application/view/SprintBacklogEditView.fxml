@@ -28,6 +28,7 @@
             <ColumnConstraints hgrow="SOMETIMES" maxWidth="167.0" minWidth="0.0" prefWidth="12.0" />
         </columnConstraints>
         <rowConstraints>
+            <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="66.0" minHeight="10.0" prefHeight="65.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="179.0" minHeight="10.0" prefHeight="140.0" vgrow="SOMETIMES" />
           <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
@@ -37,20 +38,22 @@
             <RowConstraints maxHeight="82.0" minHeight="10.0" prefHeight="43.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label text="Task" GridPane.columnIndex="1" />
-            <Label text="Beschrieb" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Label text="Zeit soll" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-            <Label text="Status" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-            <TextArea fx:id="taDescription" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <TextField fx:id="txtTask" GridPane.columnIndex="2" />
-            <TextField fx:id="txtPriority" prefHeight="27.0" prefWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <TextField fx:id="txtSbStatus" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-            <TextField fx:id="txtTimeS" GridPane.columnIndex="2" GridPane.rowIndex="4" />
-            <Label text="Priorität" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <TextField fx:id="txtTimeI" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-            <Label text="Zeit ist" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-            <TextField fx:id="txtResp" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-            <Label text="Verantwortlich" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Task" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Beschrieb" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Zeit soll" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Status" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <TextArea fx:id="taDescription" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <TextField fx:id="txtTask" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <TextField fx:id="txtPriority" prefHeight="27.0" prefWidth="70.0" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <TextField fx:id="txtSbStatus" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <TextField fx:id="txtTimeS" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label text="Priorität" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="txtTimeI" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label text="Zeit ist" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <TextField fx:id="txtResp" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label text="Verantwortlich" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="Sprint" GridPane.columnIndex="1" />
+            <TextField fx:id="txtSBSprint" GridPane.columnIndex="2" />
          </children>
       </GridPane>
    </left>

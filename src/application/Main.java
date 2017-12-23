@@ -157,7 +157,7 @@ public class Main extends Application {
 			// Set the backlog into the controller.
 			BacklogEditViewController controller = loader.getController();
 			controller.setDialogStage(dialogStage);
-			controller.setBacklog(productBacklog);
+			controller.setProductBacklog(productBacklog);
 
 			// Show the dialog and wait until the user closes it
 			dialogStage.showAndWait();

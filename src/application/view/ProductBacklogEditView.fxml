@@ -14,8 +14,8 @@
    <bottom>
       <ButtonBar prefHeight="40.0" prefWidth="569.0" BorderPane.alignment="CENTER">
         <buttons>
-          <Button fx:id="save" mnemonicParsing="false" onAction="#handleOk" text="Speichern" />
-            <Button fx:id="cancel" mnemonicParsing="false" onAction="#handleCancel" text="Abbrechen" />
+          <Button mnemonicParsing="false" onAction="#handleOk" text="Speichern" />
+            <Button mnemonicParsing="false" onAction="#handleCancel" text="Abbrechen" />
         </buttons>
       </ButtonBar>
    </bottom>
